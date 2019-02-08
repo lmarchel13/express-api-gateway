@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  express_gateway:
+    build: .
+    container_name: egdocker
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "9876:9876"
+    volumes:
+      - ./system.config.yml:/usr/src/app/config/system.config.yml
+      - ./gateway.config.yml:/usr/src/app/config/gateway.config.yml
